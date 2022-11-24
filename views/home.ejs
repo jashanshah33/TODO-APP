@@ -10,57 +10,75 @@
       src="https://kit.fontawesome.com/0dace35755.js"
       crossorigin="anonymous"
     ></script>
+  
   </head>
   <body>
     <div class="outer-Container">
       <header>TODO APP</header>
+      <!-- form -->
+      <form action="/create_list" method="post">
       <div class="description_container">
         <label for="description_input">DESCRIPTION</label>
         <input
+        name="description"
           id="description_input"
           type="text"
           placeholder="What do you want to do?"
+          required
         />
       </div>
       <div class="categories_date_container">
         <div class="categories">
           CATEGORY
-          <select class="dropDown">
+          <select name="categories" required class="dropDown">
             <option disabled selected>Choose a category</option>
             <option>SCHOOL</option>
             <option>WORK</option>
             <option>PERSONAL</option>
+            <option>CLEANING</option>
+            <option>OTHER</option>
+
           </select>
         </div>
         <div class="date">
           DUE DATE
-          <input type="date" />
+          <input name="date" required type="date" />
         </div>
       </div>
       <div class="buttons">
-        <button class="add_btn">
+        <button type="submit" class="add_btn">
           <i class="fa-solid fa-plus"></i> ADD TASK
         </button>
+      </form>
+
+      <a href="/delete_list">
         <button class="delete_btn">
           <i class="fa-solid fa-trash"></i> DELETE TASKS
         </button>
+        </a>
+
       </div>
       <div class="list_container">
+        <%let id = 1234%>
+        <% for(let i of todoList) {%>
         <div class="todo_detail">
           <div class="left">
             <input id="list_checkBox" type="checkbox" />
             <label class="description" for="list_checkBox">
-              <div>jcbjdcbe</div>
+              <div><%=i.description%></div>
               <div class="date">
                 <i class="fa-solid fa-calendar-days"></i>
-                <p>APR 28, 2019</p>
+                <p> <%=i.date.toLocaleString('default', { month: 'short' })%> <%=i.date.getDate()+1%>, <%=i.date.getFullYear() %></p>
               </div>
             </label>
-          </div>
+          </div> 
           <div class="right">
-            <button>School</button>
+            <button value=<%=i.categories%> class="list_button">
+              <%=i.categories%>
+          </button>
           </div>
         </div>
+        <%}%>
       </div>
     </div>
     <script src="/js/home.js"></script>

@@ -135,8 +135,17 @@ header {
 
 .right button {
   color: white;
-  background-color: orange;
   border: none;
-  width: 60px;
-  height: 25px;
+  height: 30px;
+  width: 85px;
 }
+/* 
+.todo_detail:nth-child(2n + 1) .list_button {
+  background-color: brown;
+}
+.todo_detail:nth-child(3n + 1) .list_button {
+  background-color: purple;
+}
+.todo_detail:nth-child(n + 1) .list_button {
+  background-color: orange;
+} */
