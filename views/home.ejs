@@ -6,8 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%=title%></title>
     <link rel="stylesheet" href="/css/home.css" />
+    <script
+      src="https://kit.fontawesome.com/0dace35755.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <h1>Home Page of <%=title%></h1>
+    <div class="outer-Container">
+      <header>TODO APP</header>
+      <div class="description_container">
+        <label for="description_input">DESCRIPTION</label>
+        <input
+          id="description_input"
+          type="text"
+          placeholder="What do you want to do?"
+        />
+      </div>
+      <div class="categories_date_container">
+        <div class="categories">
+          CATEGORY
+          <select class="dropDown">
+            <option disabled selected>Choose a category</option>
+            <option>SCHOOL</option>
+            <option>WORK</option>
+            <option>PERSONAL</option>
+          </select>
+        </div>
+        <div class="date">
+          DUE DATE
+          <input type="date" />
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="add_btn">
+          <i class="fa-solid fa-plus"></i> ADD TASK
+        </button>
+        <button class="delete_btn">
+          <i class="fa-solid fa-trash"></i> DELETE TASKS
+        </button>
+      </div>
+      <div class="list_container">
+        <div class="todo_detail">
+          <div class="left">
+            <input id="list_checkBox" type="checkbox" />
+            <label class="description" for="list_checkBox">
+              <div>jcbjdcbe</div>
+              <div class="date">
+                <i class="fa-solid fa-calendar-days"></i>
+                <p>APR 28, 2019</p>
+              </div>
+            </label>
+          </div>
+          <div class="right">
+            <button>School</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/js/home.js"></script>
   </body>
 </html>
