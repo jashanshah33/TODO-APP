@@ -26,7 +26,6 @@ module.exports.home = function (req, res) {
     res.render("home", {
       title: "Todo List",
       todoList: list,
-      color: 'red',
     });
   });
 };
@@ -43,6 +42,9 @@ module.exports.create_list = function (req, res) {
   return res.redirect("back");
 };
 
-module.exports.delete_list = function(req, res){
-  console.log(req.query.id);
-}
+module.exports.delete_list = function (req, res) {
+  console.log("deleted");
+
+  return res.redirect("back");
+
+};
