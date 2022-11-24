@@ -68,7 +68,7 @@
               <div><%=i.description%></div>
               <div class="date">
                 <i class="fa-solid fa-calendar-days"></i>
-                <p> <%=i.date.toLocaleString('default', { month: 'short' })%> <%=i.date.getDate()+1%>, <%=i.date.getFullYear() %></p>
+                <p><%=new Date(i.date).toLocaleString('default', { month: 'short' })%> <%=new Date(i.date).getDate()+1%>, <%=new Date(i.date).getFullYear() %></p>
               </div>
             </label>
           </div> 
