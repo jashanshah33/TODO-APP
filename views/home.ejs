@@ -15,8 +15,8 @@
   <body>
     <div class="outer-Container">
       <header>TODO APP</header>
-      <!-- form -->
       <form action="/create_list" method="post">
+        <!-- DESCRIPTION -->
       <div class="description_container">
         <label for="description_input">DESCRIPTION</label>
         <input
@@ -27,6 +27,7 @@
           required
         />
       </div>
+      <!-- CATEGORY -->
       <div class="categories_date_container">
         <div class="categories">
           CATEGORY
@@ -40,32 +41,34 @@
 
           </select>
         </div>
+        <!-- DATE -->
         <div class="date">
           DUE DATE
           <input name="date" required type="date" />
         </div>
       </div>
       <div class="buttons">
+        <!-- ADD TASK -->
         <button type="submit" class="add_btn">
           <i class="fa-solid fa-plus"></i> ADD TASK
         </button>
       </form>
 
-      <a href="/delete_list">
-        <button type="button" class="delete_btn">
+        <form action="delete_list" method="post">
+          <!-- DELETE TASKS -->
+        <button type="submit"  class="delete_btn">
           <i class="fa-solid fa-trash"></i> DELETE TASKS
         </button>
-      </a>
-
-
+  
       </div>
+      <!-- Tasks List -->
       <div class="list_container">
         <%let id = 1234%>
         <% for(let i of todoList) {%>
         <div class="todo_detail">
           <div class="left">
-            <input id="list_checkBox" type="checkbox" />
-            <label class="description" for="list_checkBox">
+            <input class="list_checkBox" value="<%=i._id%>" name="ids" id="<%=i._id%>" type="checkbox" />
+            <label class="description"  for="<%=i._id%>">
               <div><%=i.description%></div>
               <div class="date">
                 <i class="fa-solid fa-calendar-days"></i>
@@ -74,13 +77,14 @@
             </label>
           </div> 
           <div class="right">
-            <button value=<%=i.categories%> class="list_button">
+            <button value='<%=i.categories%>' class="list_button" >
               <%=i.categories%>
           </button>
           </div>
         </div>
         <%}%>
       </div>
+    </form>
     </div>
     <script src="/js/home.js"></script>
   </body>
