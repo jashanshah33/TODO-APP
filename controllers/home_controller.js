@@ -15,7 +15,10 @@ module.exports.home = function (req, res) {
 
 module.exports.create_list = function (req, res) {
   //console.log(req.body);
-
+  if (!req.body.description || !req.body.categories || !req.body.date) {
+    console.log('Fill all values');
+    return res.redirect("back");
+  }
   List.create({
     description: req.body.description,
     categories: req.body.categories,

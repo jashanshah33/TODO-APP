@@ -31,7 +31,7 @@
       <div class="categories_date_container">
         <div class="categories">
           CATEGORY
-          <select name="categories" required class="dropDown">
+          <select id="select_category" name="categories" class="dropDown">
             <option disabled selected>Choose a category</option>
             <option>SCHOOL</option>
             <option>WORK</option>
@@ -72,7 +72,7 @@
               <div><%=i.description%></div>
               <div class="date">
                 <i class="fa-solid fa-calendar-days"></i>
-                <p><%=new Date(i.date).toLocaleString('default', { month: 'short' })%> <%=new Date(i.date).getDate()+1%>, <%=new Date(i.date).getFullYear() %></p>
+                <p><%=new Date(i.date).toLocaleString('default', { month: 'short' })%> <%=new Date(i.date).getDate()%>, <%=new Date(i.date).getFullYear() %></p>
               </div>
             </label>
           </div> 
